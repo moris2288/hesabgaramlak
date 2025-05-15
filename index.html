@@ -34,23 +34,16 @@
         .header {
             background: var(--primary);
             color: white;
-            padding: 15px;
+            padding: 20px 15px;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .header h1 {
-            font-size: 18px;
+            font-size: 20px;
             margin: 0;
             padding: 0;
-        }
-        
-        .contact-bar {
-            background: var(--secondary);
-            color: white;
-            padding: 8px;
-            text-align: center;
-            font-size: 14px;
-            margin-bottom: 15px;
+            font-weight: 600;
         }
         
         .container {
@@ -65,12 +58,13 @@
             border-radius: 10px;
             padding: 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
         
         .section-header {
             background: var(--primary);
             color: white;
-            padding: 12px 15px;
+            padding: 15px;
             border-radius: 10px 10px 0 0;
             font-size:16px;
             font-weight: bold;
@@ -90,6 +84,7 @@
             margin-bottom: 5px;
             font-weight: 600;
             font-size: 14px;
+            color: #444;
         }
         
         input {
@@ -100,6 +95,12 @@
             font-size: 15px;
             text-align: left;
             direction: ltr;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus {
+            border-color: var(--accent);
+            outline: none;
         }
         
         .input-hint {
@@ -107,7 +108,7 @@
             top: 0;
             left: 10px;
             font-size: 11px;
-            color: #e74c3c; /* رنگ قرمز */
+            color: #e74c3c;
             background: rgba(255,255,255,0.9);
             padding: 2px 5px;
             border-radius: 4px;
@@ -119,6 +120,7 @@
             color: #666;
             margin-top: 5px;
             font-style: italic;
+            min-height: 18px;
         }
         
         .result-box {
@@ -171,6 +173,7 @@
             font-size: 13px;
             color: #666;
             margin-top: 20px;
+            line-height: 1.5;
         }
         
         .floating-button {
@@ -179,27 +182,28 @@
             bottom: 15px;
             background-color: var(--primary);
             color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 12px 18px;
+            border-radius: 8px;
             text-decoration: none;
             font-size: 14px;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        
+        .floating-button:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
         }
         
         @media (max-width: 480px) {
             .header h1 {
-                font-size: 16px;
-            }
-            
-            .contact-bar {
-                font-size: 13px;
-                padding: 6px;
+                font-size: 18px;
             }
             
             .section-header {
                 font-size: 15px;
-                padding: 10px 12px;
+                padding: 12px;
             }
             
             .commission-container {
@@ -220,7 +224,7 @@
                 left: 10px;
                 bottom: 10px;
                 font-size: 13px;
-                padding: 8px 12px;
+                padding: 10px 15px;
             }
         }
     </style>
@@ -228,10 +232,6 @@
 <body>
     <div class="header">
         <h1>محاسبه گر آنی مشاور املاک</h1>
-    </div>
-    
-    <div class="contact-bar">
-        مشاور املاک خان احمدی - تماس: 09111791024
     </div>
     
     <div class="container">
