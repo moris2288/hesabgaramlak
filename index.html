@@ -173,6 +173,20 @@
             margin-top: 20px;
         }
         
+        .floating-button {
+            position: fixed;
+            left: 15px;
+            bottom: 15px;
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
         @media (max-width: 480px) {
             .header h1 {
                 font-size: 16px;
@@ -200,6 +214,13 @@
             .input-hint {
                 font-size: 10px;
                 left: 5px;
+            }
+            
+            .floating-button {
+                left: 10px;
+                bottom: 10px;
+                font-size: 13px;
+                padding: 8px 12px;
             }
         }
     </style>
@@ -282,7 +303,7 @@
                             <div class="word-value" id="purchaseAmountWords"></div>
                         </div>
                         <div class="result-box">
-                            <div>حق کمیسیون (1%)</div>
+                            <div>حق کمیسیون</div>
                             <div class="result-value" id="purchaseCommission">0 تومان</div>
                         </div>
                     </div>
@@ -315,6 +336,8 @@
         مشاور املاک خان احمدی - تخصص در امور رهن و اجاره مسکونی و تجاری<br>
         کلیه حقوق این سامانه متعلق به مشاور املاک خان احمدی می‌باشد © 1404
     </div>
+
+    <a href="http://sest.ir" class="floating-button">صفحه اصلی Sest.ir</a>
 
     <script>
         // [کدهای جاوااسکریپت بدون تغییر باقی مانده‌اند]
@@ -488,7 +511,7 @@
         // محاسبات کمیسیون
         function calculateCommission() {
             const purchase = parseNumber(document.getElementById('purchaseAmount').value);
-            const purchaseCommission = Math.round(purchase * 0.01);
+            const purchaseCommission = Math.round(purchase * 0.005); // تغییر یافته به تقسیم بر 2
             document.getElementById('purchaseCommission').textContent = formatNumber(purchaseCommission) + ' تومان';
             
             const rentalMortgage = parseNumber(document.getElementById('rentalMortgage').value);
